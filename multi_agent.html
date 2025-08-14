@@ -22,8 +22,25 @@
         </ul>
     </nav>
     <main>
-        <h2>Multi-Agent Systems</h2>
+        <h2>Lesson 2: Multi-Agent Systems</h2>
         <p>In this module, we will explore the concept of multi-agent systems, where multiple AI agents interact with each other to achieve a common goal. This is a powerful paradigm for solving complex problems that are difficult to tackle with a single agent.</p>
+
+        <h3>Multi-Agent Architectures</h3>
+        <p>There are several common architectures for multi-agent systems:</p>
+        <ul>
+            <li><strong>Hierarchical:</strong> Agents are organized in a tree-like structure, with a "manager" agent delegating tasks to "worker" agents.</li>
+            <li><strong>Peer-to-Peer:</strong> All agents are considered equal and can communicate directly with each other.</li>
+            <li><strong>Hybrid:</strong> A combination of hierarchical and peer-to-peer architectures.</li>
+        </ul>
+
+        <h3>Coordination in Multi-Agent Systems</h3>
+        <p>Coordination is the process of managing interdependencies between activities performed by agents. Key coordination mechanisms include:</p>
+        <ul>
+            <li><strong>Planning:</strong> Agents can create and share plans to coordinate their actions.</li>
+            <li><strong>Negotiation:</strong> Agents can negotiate with each other to reach agreements on how to act.</li>
+            <li><strong>Shared Mental Models:</strong> Agents can maintain a shared understanding of the environment and the state of the system.</li>
+        </ul>
+
         <h3>Why Multi-Agent Systems?</h3>
         <p>Multi-agent systems offer several advantages, including:</p>
         <ul>
@@ -33,6 +50,50 @@
         </ul>
         <h3>Challenges</h3>
         <p>We will also discuss the challenges of building multi-agent systems, such as coordination, communication, and conflict resolution.</p>
+
+        <hr>
+
+        <h3>Lab 2: Two-Agent Interaction</h3>
+        <p>This lab will guide you through creating a simple scenario where two agents interact with each other.</p>
+
+        <h4>1. Define the Agents</h4>
+        <p>Let's create two agents: a "Questioner" agent that asks questions and a "Responder" agent that answers them. Create a new Python file named `multi_agent_lab.py`.</p>
+        <pre><code>
+class QuestionerAgent:
+    def __init__(self, name):
+        self.name = name
+
+    def ask(self, topic):
+        return f"Hello, I am {self.name}. What is {topic}?"
+
+class ResponderAgent:
+    def __init__(self, name):
+        self.name = name
+
+    def answer(self, question):
+        # In a real scenario, this would involve a knowledge base or an LLM
+        if "Python" in question:
+            return "Python is a high-level, interpreted programming language."
+        else:
+            return "I'm sorry, I don't have information on that topic."
+
+# Create instances of the agents
+questioner = QuestionerAgent("Alice")
+responder = ResponderAgent("Bob")
+
+# Simulate the interaction
+question = questioner.ask("Python")
+print(f"{questioner.name}: {question}")
+
+response = responder.answer(question)
+print(f"{responder.name}: {response}")
+        </code></pre>
+
+        <h4>2. Run the Simulation</h4>
+        <p>Execute your script from the terminal:</p>
+        <pre><code>python multi_agent_lab.py</code></pre>
+        <p>You should see a simple conversation between the two agents. This lab demonstrates a basic interaction and lays the groundwork for more complex communication protocols that we will cover in later lessons.</p>
+
     </main>
     <footer>
         <p>&copy; 2025 AI Course</p>

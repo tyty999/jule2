@@ -22,8 +22,13 @@
         </ul>
     </nav>
     <main>
-        <h2>ADK SDK from Google</h2>
+        <h2>Lesson 5: ADK SDK from Google</h2>
         <p>This module provides a practical guide to using the Agent Development Kit (ADK) SDK from Google. The ADK is a powerful toolkit for building and deploying generative AI agents.</p>
+
+        <h3>Detailed ADK Tutorial</h3>
+        <p>The ADK provides a comprehensive set of tools and libraries to accelerate the development of generative AI agents. It simplifies many of the common tasks, such as state management, tool integration, and observability.</p>
+        <p>To get started with the ADK, you typically need to install the SDK and set up a new project. The ADK provides a command-line interface (CLI) to help with this process.</p>
+
         <h3>Getting Started with ADK</h3>
         <p>We will walk you through the process of setting up your development environment and installing the ADK. You will learn how to create your first agent and run it locally.</p>
         <h3>Core Features</h3>
@@ -34,6 +39,38 @@
         </ul>
         <h3>Code Examples</h3>
         <p>This module will be rich with code examples to help you understand how to use the ADK in practice. You will have the opportunity to build several simple agents to solidify your understanding.</p>
+
+        <hr>
+
+        <h3>Lab 5: Building a Simple Agent with the ADK</h3>
+        <p>This lab provides a step-by-step guide to building a simple, functional agent using the ADK.</p>
+
+        <h4>1. Install the ADK</h4>
+        <p>First, you need to install the ADK CLI. The installation process may vary depending on your operating system. Please refer to the official ADK documentation for the most up-to-date instructions.</p>
+        <pre><code>pip install adk</code></pre>
+
+        <h4>2. Create a New Project</h4>
+        <p>Use the ADK CLI to create a new project.</p>
+        <pre><code>adk new my-adk-agent</code></pre>
+        <p>This will create a new directory named `my-adk-agent` with a basic project structure.</p>
+
+        <h4>3. Define the Agent's Behavior</h4>
+        <p>Inside your project, you will find a file where you can define your agent's behavior. This is typically done by implementing a specific interface or class provided by the ADK. For example, you might have a file named `agent.py` with the following content:</p>
+        <pre><code>
+from adk import Agent
+
+class MyAgent(Agent):
+    def on_message(self, message):
+        # Your agent's logic goes here
+        return f"Acknowledged: {message.content}"
+        </code></pre>
+
+        <h4>4. Run the Agent</h4>
+        <p>Use the ADK CLI to run your agent locally.</p>
+        <pre><code>adk run</code></pre>
+        <p>This will start your agent and make it available for interaction. You can then use the ADK's testing tools or a simple client to send messages to your agent and see its responses.</p>
+        <p>This lab is a simplified example, but it gives you a taste of how the ADK streamlines the process of building and running agents. For more advanced topics, such as tool use and state management, please refer to the official ADK documentation.</p>
+
     </main>
     <footer>
         <p>&copy; 2025 AI Course</p>

@@ -22,8 +22,32 @@
         </ul>
     </nav>
     <main>
-        <h2>Model-Context Protocol (MCP)</h2>
+        <h2>Lesson 3: Model-Context Protocol (MCP)</h2>
         <p>This module introduces the Model-Context Protocol (MCP), a standardized way to manage and share context between different AI models and agents. MCP is crucial for building coherent and effective multi-agent systems.</p>
+
+        <h3>Deeper Dive into the MCP Specification</h3>
+        <p>MCP is designed to be a lightweight and flexible protocol. It is typically implemented using JSON or a similar data serialization format. An MCP message usually consists of a header and a body.</p>
+        <ul>
+            <li><strong>Header:</strong> The header contains metadata about the message, such as the sender, receiver, message ID, and timestamp.</li>
+            <li><strong>Body:</strong> The body contains the actual content of the message, which can be a user query, a response from an agent, or any other type of contextual information.</li>
+        </ul>
+
+        <h3>Example of an MCP Message</h3>
+        <pre><code>
+{
+  "header": {
+    "sender": "user-123",
+    "receiver": "researcher-agent",
+    "message_id": "msg-001",
+    "timestamp": "2025-08-13T17:00:00Z"
+  },
+  "body": {
+    "type": "query",
+    "content": "What is the capital of France?"
+  }
+}
+        </code></pre>
+
         <h3>What is MCP?</h3>
         <p>MCP provides a structured format for passing contextual information, such as user queries, conversation history, and environmental state, between different components of an AI system. This ensures that all agents have the necessary information to perform their tasks effectively.</p>
         <h3>Benefits of MCP</h3>
@@ -32,6 +56,53 @@
             <li><strong>Clarity:</strong> It provides a clear and unambiguous way to represent context, reducing the risk of misinterpretation.</li>
             <li><strong>Extensibility:</strong> The protocol is designed to be extensible, allowing for the addition of new types of contextual information as needed.</li>
         </ul>
+
+        <hr>
+
+        <h3>Lab 3: Constructing and Parsing MCP Messages</h3>
+        <p>This lab will guide you through constructing and parsing MCP messages in Python.</p>
+
+        <h4>1. Constructing an MCP Message</h4>
+        <p>Let's create a Python script to construct an MCP message. Create a new file named `mcp_lab.py`.</p>
+        <pre><code>
+import json
+
+def construct_mcp_message(sender, receiver, message_id, content):
+    message = {
+        "header": {
+            "sender": sender,
+            "receiver": receiver,
+            "message_id": message_id,
+            "timestamp": "2025-08-13T17:00:00Z"
+        },
+        "body": {
+            "type": "query",
+            "content": content
+        }
+    }
+    return json.dumps(message, indent=2)
+
+# Construct a message
+mcp_message = construct_mcp_message("user-123", "researcher-agent", "msg-001", "What is the capital of France?")
+print(mcp_message)
+        </code></pre>
+
+        <h4>2. Parsing an MCP Message</h4>
+        <p>Now, let's add a function to parse an MCP message.</p>
+        <pre><code>
+def parse_mcp_message(mcp_message):
+    message = json.loads(mcp_message)
+    return message["header"], message["body"]
+
+# Parse the message
+header, body = parse_mcp_message(mcp_message)
+print("\n--- Parsed Message ---")
+print(f"Sender: {header['sender']}")
+print(f"Receiver: {header['receiver']}")
+print(f"Content: {body['content']}")
+        </code></pre>
+        <p>Add the parsing code to your `mcp_lab.py` file and run it. This lab gives you a practical understanding of how to work with MCP messages, which is a fundamental skill for building multi-agent systems.</p>
+
     </main>
     <footer>
         <p>&copy; 2025 AI Course</p>

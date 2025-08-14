@@ -22,24 +22,34 @@
         </ul>
     </nav>
     <main>
-        <h2>Final Project</h2>
-        <p>In the final project, you will apply everything you've learned in this course to build your own multi-agent system. This is a hands-on project that will challenge you to think creatively and solve a real-world problem.</p>
+        <h2>Final Project: Building a Collaborative Research Assistant</h2>
+        <p>In the final project, you will apply everything you've learned in this course to build your own multi-agent system. This is a hands-on project that will challenge you to think creatively and solve a real-world problem. You will be building on the concepts and skills you developed in the previous labs.</p>
+
         <h3>Project Idea: A Collaborative Research Assistant</h3>
         <p>Your task is to build a team of AI agents that can collaborate on a research task. The team should consist of the following agents:</p>
         <ul>
-            <li><strong>Researcher Agent:</strong> This agent is responsible for searching the web for information on a given topic.</li>
-            <li><strong>Writer Agent:</strong> This agent takes the information gathered by the Researcher Agent and writes a summary.</li>
-            <li><strong>Editor Agent:</strong> This agent reviews the summary written by the Writer Agent and suggests improvements.</li>
+            <li><strong>Researcher Agent:</strong> This agent is responsible for searching the web for information on a given topic. You will need to integrate this agent with a search API.</li>
+            <li><strong>Writer Agent:</strong> This agent takes the information gathered by the Researcher Agent and writes a summary. This agent should be able to synthesize information from multiple sources.</li>
+            <li><strong>Editor Agent:</strong> This agent reviews the summary written by the Writer Agent and suggests improvements. This could involve checking for grammar, style, and factual accuracy.</li>
         </ul>
-        <h3>Requirements</h3>
+
+        <h3>Revised Requirements</h3>
         <p>Your multi-agent system must meet the following requirements:</p>
         <ul>
-            <li>Agents must communicate with each other using an A2A protocol.</li>
-            <li>Context must be shared between agents using MCP.</li>
-            <li>The system must be built using the ADK SDK.</li>
+            <li><strong>A2A Communication:</strong> Agents must communicate with each other using a robust A2A protocol. You can implement your own message bus, as we did in Lab 4, or use a more advanced library.</li>
+            <li><strong>MCP for Context Sharing:</strong> All communication between agents must use the Model-Context Protocol (MCP). You will need to design your own MCP message formats for the different types of interactions.</li>
+            <li><strong>ADK SDK:</strong> The entire system must be built using the ADK SDK. This will help you manage the complexity of the project and ensure that your agents are well-structured and maintainable.</li>
+            <li><strong>Code Quality:</strong> Your code should be well-documented and follow best practices.</li>
         </ul>
+
         <h3>Submission</h3>
-        <p>You will need to submit your source code, a demo of your project, and a short report explaining your design choices.</p>
+        <p>You will need to submit the following:</p>
+        <ul>
+            <li>The complete source code for your project.</li>
+            <li>A `README.md` file with instructions on how to run your project.</li>
+            <li>A short video demonstrating your project in action.</li>
+            <li>A report (2-3 pages) explaining your design choices, the challenges you faced, and what you learned.</li>
+        </ul>
     </main>
     <footer>
         <p>&copy; 2025 AI Course</p>

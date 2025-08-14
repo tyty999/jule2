@@ -22,10 +22,24 @@
         </ul>
     </nav>
     <main>
-        <h2>Introduction to Generative AI Agents</h2>
+        <h2>Lesson 1: Introduction to Generative AI Agents</h2>
         <p>This module provides a foundational understanding of Generative AI agents. We will explore what they are, the key components that make them work, and their various applications across different industries.</p>
+
+        <h3>A Brief History of AI Agents</h3>
+        <p>The concept of agents has been a part of AI since its early days. Early agents were largely symbolic and rule-based. The rise of machine learning brought about statistical and learning-based agents. Today, with the power of large language models (LLMs), we are in the era of generative agents, which are capable of complex reasoning, planning, and creative tasks.</p>
+
+        <h3>Types of AI Agents</h3>
+        <ul>
+            <li><strong>Simple Reflex Agents:</strong> These agents act only on the basis of the current percept, ignoring the rest of the percept history.</li>
+            <li><strong>Model-based Reflex Agents:</strong> These agents maintain an internal state to track aspects of the world that are not evident in the current percept.</li>
+            <li><strong>Goal-based Agents:</strong> These agents act to achieve their goals.</li>
+            <li><strong>Utility-based Agents:</strong> These agents try to maximize their own expected "happiness" or utility.</li>
+            <li><strong>Learning Agents:</strong> These agents can learn from their experiences and improve their performance over time.</li>
+        </ul>
+
         <h3>What is an AI Agent?</h3>
         <p>An AI agent is an autonomous entity that perceives its environment through sensors and acts upon that environment through actuators to achieve its goals. In the context of Generative AI, these agents can create new content, such as text, images, or code.</p>
+
         <h3>Key Components</h3>
         <ul>
             <li><strong>Model:</strong> The core of the agent, usually a large language model (LLM) or a diffusion model.</li>
@@ -33,6 +47,43 @@
             <li><strong>Action:</strong> The decisions or outputs the agent produces.</li>
             <li><strong>Memory:</strong> The agent's ability to retain information over time.</li>
         </ul>
+
+        <hr>
+
+        <h3>Lab 1: Hello, Agent!</h3>
+        <p>This lab will guide you through setting up your Python environment and writing your first, very simple, agent script.</p>
+
+        <h4>1. Setup Your Environment</h4>
+        <p>First, make sure you have Python 3.8 or higher installed. You can check your Python version by running:</p>
+        <pre><code>python --version</code></pre>
+        <p>It's highly recommended to use a virtual environment to manage your project's dependencies. Create and activate a virtual environment:</p>
+        <pre><code>python -m venv my-agent-env
+source my-agent-env/bin/activate  # On Windows, use `my-agent-env\Scripts\activate`</code></pre>
+
+        <h4>2. Create your Agent</h4>
+        <p>Create a new Python file named `agent.py`. In this file, we will define a simple agent class.</p>
+        <pre><code>
+class Agent:
+    def __init__(self, name):
+        self.name = name
+
+    def respond(self, prompt):
+        return f"Hello, {prompt}! I am {self.name}, a simple agent."
+
+# Create an instance of the agent
+my_agent = Agent("Jules")
+
+# Interact with the agent
+response = my_agent.respond("World")
+print(response)
+        </code></pre>
+
+        <h4>3. Run your Agent</h4>
+        <p>Execute your script from the terminal:</p>
+        <pre><code>python agent.py</code></pre>
+        <p>You should see the output: `Hello, World! I am Jules, a simple agent.`</p>
+        <p>Congratulations! You have created and run your first agent. This is a very basic example, but it illustrates the core concept of an agent that can take an input and produce an output.</p>
+
     </main>
     <footer>
         <p>&copy; 2025 AI Course</p>
